@@ -1,9 +1,12 @@
-const path = require('path');
 const express = require('express');
-const adminController = require('../controllers/admin');
+const {getProducts, getCategory, getFamilies} = require('../controllers/admin');
 const router = express.Router();
 
 // admin/products => GET
-router.get('/products', adminController.getProducts);
+router.get('/products', getProducts);
+
+router.get('/category', getCategory);
+
+router.get('/families', getFamilies);
 
 module.exports = router;

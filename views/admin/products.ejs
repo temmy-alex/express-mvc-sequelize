@@ -1,3 +1,24 @@
 <%- include('../includes/head.ejs') %>
-<h1>Test</h1>
+<div class="container">
+    <div class="row">
+        <% if(products.length > 0) { %>
+            <% for (let product of products) { %>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="<%= product.imageUrl %>" class="card-img-top" alt="<%= product.title %>">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= product.title %></h5>
+                            <p class="card-text"><%= product.description %></p>
+                            <p class="card-text"><%= product.price %></p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        <% }else{ %>
+            <h1>No Products Found!</h1>
+        <% } %>
+        
+    </div>
+</div>
 <%- include('../includes/end.ejs') %>
